@@ -6,11 +6,7 @@ const Recipe = ({ planets, climate, terrain, films }) => {
       <h1>{planets}</h1>
       <p>{climate}</p>
       <p>{terrain}</p>
-      <ul>
-        {films.map(films => (
-          <li>{films}</li>
-        ))}
-      </ul>
+      <p>{films}</p>
     </div>
   );
 };

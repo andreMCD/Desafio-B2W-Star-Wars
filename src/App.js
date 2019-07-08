@@ -17,14 +17,10 @@ const App = () => {
     const response = await fetch(`https://swapi.co/api/${query}/`);
     const data = await response.json();
 
-    setRecipes(data.results);
+    setRecipes(data.results[Math.floor(Math.random() * data.results.length)]);
     console.log(data.results);
+    console.log(data.results[Math.floor(Math.random() * data.results.length)]);
   };
-
-  //const getPlanet = e => {
-  //e.preventDefault();
-  //const rand = myArray[Math.floor(Math.random() * myArray.length)];
-  //};
 
   const updateSearch = e => {
     setSearch(e.target.value);
@@ -45,15 +41,14 @@ const App = () => {
           Sortear
         </button>
       </form>
-      {recipes.map(recipe => (
-        <Recipe
-          key={recipe.name}
-          planets={recipe.name}
-          climate={recipe.climate}
-          terrain={recipe.terrain}
-          films={recipe.films}
-        />
-      ))}
+
+      <Recipe
+        key={recipes.name}
+        planets={recipes.name}
+        climate={recipes.climate}
+        terrain={recipes.terrain}
+        films={recipes.films}
+      />
     </div>
   );
 };
