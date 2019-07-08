@@ -5,7 +5,6 @@ import "./App.css";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -18,29 +17,19 @@ const App = () => {
     const data = await response.json();
 
     setRecipes(data.results[Math.floor(Math.random() * data.results.length)]);
-    console.log(data.results);
-    console.log(data.results[Math.floor(Math.random() * data.results.length)]);
+    setQuery("");
   };
 
   const updateSearch = e => {
-    setSearch(e.target.value);
-  };
-
-  const getSearch = e => {
     e.preventDefault();
-    setQuery(search);
-    setSearch("");
+    setQuery("planets");
   };
-
   return (
     <div className="app">
       <h1 className="title">Star Wars!</h1>
-      <form onSubmit={getSearch}>
-        <input type="text" value={search} onChange={updateSearch} />
-        <button className="btn-submit" type="submit">
-          Sortear
-        </button>
-      </form>
+      <button className="btn-submit" type="submit" onClick={updateSearch}>
+        Sortear
+      </button>
 
       <Recipe
         key={recipes.name}
