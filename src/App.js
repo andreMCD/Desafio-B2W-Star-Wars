@@ -4,7 +4,7 @@ import Recipe from "./Recipe";
 import "./App.css";
 
 //importando os componentes de estilos
-import { Container, Title } from "./styles";
+import { Container } from "./styles";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
