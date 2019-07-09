@@ -3,6 +3,9 @@ import Recipe from "./Recipe";
 
 import "./App.css";
 
+//importando os componentes de estilos
+import { Container, Title } from "./styles";
+
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
@@ -25,9 +28,10 @@ const App = () => {
     setQuery("planets");
   };
   return (
-    <div className="app">
-      <h1 className="title">Star Wars!</h1>
-      <button className="btn-submit" type="submit" onClick={updateSearch}>
+    <Container>
+      <h1>Star Wars!</h1>
+
+      <button type="submit" onClick={updateSearch}>
         Sortear
       </button>
 
@@ -38,7 +42,7 @@ const App = () => {
         terrain={recipes.terrain}
         films={recipes.films}
       />
-    </div>
+    </Container>
   );
 };
 export default App;

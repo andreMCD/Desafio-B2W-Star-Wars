@@ -1,12 +1,14 @@
 import React from "react";
 
+import { Title, Paragraph } from "./styles";
+
 const Recipe = ({ planets, climate, terrain, films }) => {
   return (
     <div>
-      <h1>{planets}</h1>
-      <p>{climate}</p>
-      <p>{terrain}</p>
-      <p>{films}</p>
+      <Title>{planets}</Title>
+      <Paragraph>{climate}</Paragraph>
+      <Paragraph>{terrain}</Paragraph>
+      <Paragraph>{films}</Paragraph>
     </div>
   );
 };
